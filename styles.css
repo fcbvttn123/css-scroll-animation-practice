@@ -1,0 +1,115 @@
+/* Header */
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(230,66,142,255);
+    
+    display: flex;
+    align-items: center;
+    
+    transition: 100ms ease;
+    --dynamic-height: calc(min(var(--scroll), 5) * 175 / 5);
+    height: calc(var(--dynamic-height) * -1px + 250px);
+
+    /* 
+        Scroll: 
+
+        (oldVal - oldMin) * newRange / oldRange + newMin 
+
+        min(var(--scroll), 5) * 175 / 5 + newMin 
+
+        newRange --> 250px - 80px
+
+        oldRange --> 0% --> 5%
+
+        oldValue --> min(var(--scroll), 5)
+        
+    */
+}
+
+header h1 {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    --dynamic-font-size: calc(min(var(--scroll), 5) / 5);
+    font-size: calc(var(--dynamic-font-size) * -1rem + 2rem);
+    transition: 30ms ease;
+
+    /* 
+        Scroll: 
+
+        (oldVal - oldMin) * newRange / oldRange + newMin
+
+        min(var(--scroll), 5) / 5 + newMin
+
+        newRange --> 2rem - 1rem
+
+        oldRange --> 0% --> 5%
+
+        oldValue --> min(var(--scroll), 5)
+        
+    */
+}
+
+
+
+
+/* Arrow Section*/
+
+.arrow-box {
+    position: absolute;
+    right: 0;
+    top: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transform-origin: center right;
+    /* transform: rotate(90deg); */
+    /* right: 100px; */
+}
+
+.arrow-box .circle {
+    background-color: #f5b055;
+    border-radius: 50%;
+    width: 60px;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-box .material-symbols-outlined {
+    color: white;
+    font-size: 2rem;
+}
+
+.arrow-box .bar {
+    height: 2px;
+    width: 200px;
+}
+
+
+
+
+/* Section 1 */
+
+.section1 {
+    height: 100vh;
+    width: 100%;
+    background-color: aqua;
+}
+
+
+
+
+/* Section 2 */
+
+.section2 {
+    height: 100vh;
+    width: 100%;
+    background-color:antiquewhite;
+}
